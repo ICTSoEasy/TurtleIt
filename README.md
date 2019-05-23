@@ -1,14 +1,14 @@
 # TurtleIt
 
-##Introduction
+## Introduction
 TurtleIt is ...
 
-##Workflow
+## Workflow
 1. 
 2. 
 3. 
 
-##Installation & Use
+## Installation & Use
 1. 
 2. 
 3. 
