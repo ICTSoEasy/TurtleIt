@@ -11,183 +11,9 @@ from contextlib import closing
 from bs4 import BeautifulSoup
 from turtle import *
 from turtleit_urls import *
+from turtleit_mazes import *
 import ast
 import re
-
-WALLCOL = "red"
-TURTLECOL = "blue"
-GOALCOL = "green"
-WALLSIZE = 10
-TURTLESIZE = 3
-POOCOL = "brown"
-POOSIZE = 20
-
-def makefast():
-    penup()
-    ht()
-    speed(0)
-    goto(0,-300)
-    pendown()
-    pensize(WALLSIZE)
-    pencolor(WALLCOL)
-
-def makeslow():
-    pendown()
-    pensize(TURTLESIZE)
-    pencolor(TURTLECOL)
-    st()
-    speed(1)
-    shape("turtle")
-
-def challenge0():
-    #get to start
-    makefast()
-    left(90)
-    penup()
-    forward(20)
-    pendown()
-    #bottom line
-    left(90)
-    forward(205)
-    right(90)
-    #left line
-    forward(450)
-    right(90)
-    #top line
-    forward(450)
-    right(90)
-    #right line
-    forward(205)
-    pencolor(GOALCOL)
-    forward(40)
-    pencolor(WALLCOL)
-    forward(205)
-    right(90)
-    #bottom line
-    forward(205)
-    penup()
-    forward(20)
-    right(90)
-    pendown()
-    #bottom wall
-    penup()
-    goto(240,-100)
-    left(90)
-    pendown()
-    forward(150)
-    #return to start
-    penup()
-    goto(20,-300)
-    right(90)
-    makeslow()
-
-def challenge1():
-    #get to start
-    makefast()
-    left(90)
-    penup()
-    forward(20)
-    #bottom line pt1
-    pendown()
-    left(90)
-    forward(205)
-    #left wall
-    right(90)
-    forward(450)
-    #top wall pt1
-    right(90)
-    forward(205)
-    #goal
-    pencolor(GOALCOL)
-    forward(40)
-    pencolor(WALLCOL)
-    #top wall pt2
-    forward(205)
-    #right wall
-    right(90)
-    forward(450)
-    #bottom wall pt2
-    right(90)
-    forward(205)
-    #return to start
-    penup()
-    forward(20)
-    right(90)
-    pendown()
-    #top wall
-    penup()
-    goto(-200,50)
-    right(90)
-    pendown()
-    forward(300)
-    #bottom wall
-    penup()
-    goto(240,-100)
-    right(180)
-    pendown()
-    forward(300)
-    #return to start point
-    penup()
-    goto(20,-300)
-    right(90)
-    makeslow()
-
-def challenge2():
-    #get to start
-    makefast()
-    left(90)
-    penup()
-    forward(20)
-    #bottom line pt1
-    pendown()
-    left(90)
-    forward(205)
-    #left wall
-    right(90)
-    forward(450)
-    #top wall pt1
-    right(90)
-    forward(205)
-    #goal
-    pencolor(GOALCOL)
-    forward(40)
-    pencolor(WALLCOL)
-    #top wall pt2
-    forward(205)
-    #right wall
-    right(90)
-    forward(450)
-    #bottom wall pt2
-    right(90)
-    forward(205)
-    #return to start
-    penup()
-    forward(20)
-    right(90)
-    pendown()
-    #top wall
-    penup()
-    goto(-200,50)
-    right(90)
-    pendown()
-    forward(300)
-    #middle wall
-    penup()
-    goto(240,-50)
-    right(180)
-    pendown()
-    forward(300)
-    #bottom wall
-    penup()
-    goto(-200,-150)
-    right(180)
-    pendown()
-    forward(300)
-    #return to start point
-    penup()
-    goto(20,-300)
-    left(90)
-    makeslow()
 
 def simple_get(url):
     """
@@ -230,11 +56,8 @@ def log_error(e):
 #Get the correct challenge/team number
 while True:
     try:
-        print(1)
         challenge = int(input('What is your challenge number? '))
-        print(2)
         team = int(input('What is your team number? '))
-        print(3)
         url = geturl(challenge,team)
         if not url:
           print('Sorry, I can\'t find those numbers. Try again?')
@@ -264,6 +87,12 @@ elif challenge == 1:
     challenge1()
 elif challenge == 2:
     challenge2()
+elif challenge == 3:
+    challenge3()
+elif challenge == 4:
+    challenge4()
+elif challenge == 5:
+    challenge5()
 
 #Run through each line of code
 #for idx,line in enumerate(lines):
@@ -308,11 +137,10 @@ while idx < len(lines):
     #poo command
     if not finished and cmds[0] in ['POO','POOH']:
         try:
-            spot(POOSIZE,POOCOL)
-            print('Ok!')
+            spot()
             finished = True
         except:
-            print("Sorry, I think your number is wrong?")
+            print("Sorry, I think your poo didn't work?")
             finished = True   
 
     #start loop
