@@ -194,6 +194,44 @@ def challenge2():
     left(90)
     makeslow()
 
+def challenge3():
+    #get to start
+    makefast()
+    left(90)
+    penup()
+    forward(20)
+    pendown()
+    #bottom line
+    left(90)
+    forward(205)
+    right(90)
+    #left line
+    forward(450)
+    right(90)
+    #top line
+    forward(450)
+    right(90)
+    #right line
+    forward(205)
+    pencolor(GOALCOL)
+    forward(40)
+    pencolor(WALLCOL)
+    forward(205)
+    right(90)
+    #bottom line
+    forward(205)
+    penup()
+    forward(20)
+    right(90)
+    pendown()
+    #bottom wall
+    circle(180,90)
+    #return to start
+    penup()
+    goto(20,-300)
+    right(90)
+    makeslow()
+
 def challenge5():
     makefast()
     penup()
