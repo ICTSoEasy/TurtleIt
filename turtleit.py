@@ -93,6 +93,8 @@ elif challenge == 4:
     challenge4()
 elif challenge == 5:
     challenge5()
+elif challenge == 6:
+    challenge6()
 
 #Run through each line of code
 #for idx,line in enumerate(lines):

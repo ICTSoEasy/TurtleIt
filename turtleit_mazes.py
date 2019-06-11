@@ -195,49 +195,10 @@ def challenge2():
     makeslow()
 
 def challenge3():
-    #get to start
-    makefast()
-    left(90)
-    penup()
-    forward(20)
-    pendown()
-    #bottom line
-    left(90)
-    forward(205)
-    right(90)
-    #left line
-    forward(450)
-    right(90)
-    #top line
-    forward(450)
-    right(90)
-    #right line
-    forward(205)
-    pencolor(GOALCOL)
-    forward(40)
-    pencolor(WALLCOL)
-    forward(205)
-    right(90)
-    #bottom line
-    forward(205)
-    penup()
-    forward(20)
-    right(90)
-    pendown()
-    #bottom wall
-    circle(180,90)
-    #return to start
-    penup()
-    goto(20,-300)
-    right(90)
-    makeslow()
-
-def challenge5():
     makefast()
     penup()
     goto(0,-180)
     pendown()
-    speed(10)
     setheading(180)
     fd(180)
     setheading(90)
@@ -249,6 +210,12 @@ def challenge5():
     fd(300)
     setheading(0)
     fd(120)
+    color('green')
+    fd(60)
+    left(180)
+    fd(60)
+    left(180)
+    color('red')
     setheading(-90)
     fd(120)
     setheading(180)
@@ -314,4 +281,122 @@ def challenge5():
     fd(120)
     setheading(180)
     fd(120)
+    penup()
+    fd(30)
+    right(90)
+    pendown()
+    makeslow()
+
+def challenge4():
+    #get to start
+    makefast()
+    left(90)
+    penup()
+    forward(20)
+    pendown()
+    #bottom line
+    left(90)
+    penup()
+    forward(10)
+    pendown()
+    forward(195)
+    right(90)
+    #left line
+    forward(450)
+    right(90)
+    #top line
+    forward(450)
+    right(90)
+    #right line
+    forward(205)
+    pencolor(GOALCOL)
+    forward(40)
+    pencolor(WALLCOL)
+    forward(205)
+    right(90)
+    #bottom line
+    forward(205)
+    penup()
+    forward(20)
+    right(90)
+    pendown()
+    #bottom circle wall
+    penup()
+    goto(240,-75)
+    left(90)
+    pendown()
+    circle(200,90)
+    #top circle wall
+    penup()
+    goto(240,-25)
+    right(90)
+    pendown()
+    circle(250,90)
+    #return to start
+    penup()
+    goto(20,-300)
+    right(180)
+    makeslow()
+
+def challenge5():
+    #get to start
+    makefast()
+    left(90)
+    penup()
+    forward(20)
+    pendown()
+    #bottom line
+    left(90)
+    penup()
+    forward(10)
+    pendown()
+    forward(195)
+    right(90)
+    #left line
+    forward(205)
+    pencolor(GOALCOL)
+    forward(40)
+    pencolor(WALLCOL)
+    forward(205)
+    right(90)
+    #top line
+    forward(450)
+    right(90)
+    #right line
+    forward(450)
+    right(90)
+    #bottom line
+    forward(205)
+    penup()
+    forward(20)
+    right(90)
+    pendown()
+    #bottom right circle wall
+    penup()
+    goto(240,-75)
+    left(90)
+    pendown()
+    circle(200,90)
+    #top right circle wall
+    penup()
+    goto(240,-25)
+    right(90)
+    circle(250,10)
+    pendown()
+    circle(250,80)
+    #bottom left circle wall
+    penup()
+    goto(-200,-80)
+    left(90)
+    pendown()
+    circle(250,80)
+    #top left circle wall
+    penup()
+    goto(-200,-30)
+    setheading(0)
+    pendown()
+    circle(195,90)
+    #return to start
+    penup()
+    goto(20,-300)
     makeslow()
